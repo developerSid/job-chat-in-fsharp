@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "csharpier": {
+      "version": "1.4.0",
+      "commands": [
+        "csharpier"
+      ],
+      "rollForward": false
+    },
+    "fantomas": {
+      "version": "8.1.1",
+      "commands": [
+        "fantomas"
+      ],
+      "rollForward": false
+    },
+    "fsautocomplete": {
+      "version": "0.86.1",
+      "commands": [
+        "fsautocomplete"
+      ],
+      "rollForward": false
+    },
+    "husky": {
+      "version": "0.9.1",
+      "commands": [
+        "husky"
+      ],
+      "rollForward": false
+    },
+    "paket": {
+      "version": "12.0.0",
+      "commands": [
+        "paket"
+      ],
+      "rollForward": false
+    }
+  }
+}

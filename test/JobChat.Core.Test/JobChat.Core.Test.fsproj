@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Myers.Estate.JobChat.Core.Test</RootNamespace>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CoreTests.fs" />
+    <Compile Include="TextTests.fs" />
+    <Compile Include="DateTests.fs" />
+    <Compile Include="IdentityTests.fs" />
+    <Compile Include="MatcherTests.fs" />
+    <Compile Include="ValidationTests.fs" />
+    <Compile Include="NonZeroPositiveNumberTests.fs" />
+    <Compile Include="DiscriminatedUnionsTests.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\JobChat.Core\JobChat.Core.fsproj" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/.paket/">
+    <File Path="paket.dependencies" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/JobChat.Core/JobChat.Core.fsproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/JobChat.Core.Test/JobChat.Core.Test.fsproj" />
+  </Folder>
+</Solution>
