@@ -4,8 +4,11 @@
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/JobChat.Core/JobChat.Core.fsproj" />
+    <Project Path="src/JobChat.Robo.API/JobChat.Robo.API.fsproj" />
+    <Project Path="src/JobChat.Robo.Web/JobChat.Robo.Web.csproj" />
   </Folder>
   <Folder Name="/test/">
     <Project Path="test/JobChat.Core.Test/JobChat.Core.Test.fsproj" />
+    <Project Path="test/JobChat.Robo.API.Test/JobChat.Robo.API.Test.fsproj" />
   </Folder>
 </Solution>

@@ -9,3 +9,6 @@ nuget FsToolkit.ErrorHandling 5.2.0
 nuget Microsoft.NET.Test.Sdk 17.14.1
 nuget xunit 2.9.3
 nuget xunit.runner.visualstudio 3.1.4
+nuget Microsoft.AspNetCore.Components.WebAssembly.Server 10.0.15
+nuget Microsoft.AspNetCore.Mvc.Testing 10.0.15
+nuget Microsoft.AspNetCore.TestHost 10.0.15

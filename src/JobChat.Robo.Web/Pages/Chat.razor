@@ -1,0 +1,61 @@
+@page "/chat"
+
+<PageTitle>Chat</PageTitle>
+
+<h1>Chat</h1>
+
+<ul class="list-unstyled">
+    @foreach (var line in lines)
+    {
+        <li><strong>@line.Who:</strong> @line.Text</li>
+    }
+</ul>
+
+@if (error is not null)
+{
+    <p class="text-danger">@error</p>
+}
+
+<form @onsubmit="SendAsync" class="input-group">
+    <input class="form-control" @bind="message" @bind:event="oninput" placeholder="Type a message" />
+    <button class="btn btn-primary" type="submit" disabled="@(sending || string.IsNullOrWhiteSpace(message))">Send</button>
+</form>
+
+@code {
+    [Inject]
+    private HttpClient Http { get; set; } = default!;
+
+    private readonly List<(string Who, string Text)> lines = [];
+    private string message = "";
+    private string? error;
+    private bool sending;
+
+    private async Task SendAsync()
+    {
+        sending = true;
+        error = null;
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/chat", new ChatRequest(message));
+            if (response.IsSuccessStatusCode)
+            {
+                var reply = await response.Content.ReadFromJsonAsync<ChatResponse>();
+                lines.Add(("You", message));
+                lines.Add(("Robo", reply?.Reply ?? ""));
+                message = "";
+            }
+            else
+            {
+                error = await response.Content.ReadAsStringAsync();
+            }
+        }
+        catch (HttpRequestException ex)
+        {
+            error = ex.Message;
+        }
+        finally
+        {
+            sending = false;
+        }
+    }
+}

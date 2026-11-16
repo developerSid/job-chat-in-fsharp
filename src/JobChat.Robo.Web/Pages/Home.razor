@@ -1,0 +1,29 @@
+@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>JobChat Robo</h1>
+
+<p>API status: @(status ?? "checking...")</p>
+
+<p><a href="chat">Start chatting</a></p>
+
+@code {
+    [Inject]
+    private HttpClient Http { get; set; } = default!;
+
+    private string? status;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var health = await Http.GetFromJsonAsync<HealthResponse>("api/health");
+            status = health?.Status ?? "unknown";
+        }
+        catch (HttpRequestException)
+        {
+            status = "unreachable";
+        }
+    }
+}
