@@ -4,6 +4,8 @@ NUGET
   remote: https://api.nuget.org/v3/index.json
     coverlet.collector (6.0.4)
     FSharp.Core (11.0.101)
+    FsToolkit.ErrorHandling (5.2)
+      FSharp.Core (>= 9.0.300)
     Microsoft.CodeCoverage (18.12)
     Microsoft.NET.Test.Sdk (17.14.1)
       Microsoft.CodeCoverage (>= 17.14.1)

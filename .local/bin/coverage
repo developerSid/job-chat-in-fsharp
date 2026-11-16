@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+rm -rf TestResults coverage-report
+dotnet test --collect:"XPlat Code Coverage" --results-directory ./TestResults
+dotnet reportgenerator -reports:"TestResults/**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:"Html;TextSummary"
+cat coverage-report/Summary.txt
+echo "Report: coverage-report/index.html"
