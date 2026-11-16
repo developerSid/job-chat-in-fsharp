@@ -1,2 +1,4 @@
 FSharp.Core
 Microsoft.AspNetCore.Components.WebAssembly.Server
+Serilog.AspNetCore
+Serilog.Expressions

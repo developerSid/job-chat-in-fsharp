@@ -4,6 +4,7 @@ open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Http
 open System
 open Microsoft.Extensions.Hosting
+open Serilog
 
 module Program =
   let describe =
@@ -33,6 +34,15 @@ module Program =
 
   [<EntryPoint>]
   let main args =
-    let app = WebApplication.CreateBuilder(args).Build() |> configure
+    let builder = WebApplication.CreateBuilder args
+
+    builder.Host.UseSerilog(fun context services configuration ->
+      configuration.ReadFrom.Configuration(context.Configuration).ReadFrom.Services(services).Enrich.FromLogContext()
+      |> ignore
+    )
+    |> ignore
+
+    let app = builder.Build() |> configure
+    app.UseSerilogRequestLogging() |> ignore
     app.Run()
     0

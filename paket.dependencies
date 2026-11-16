@@ -7,6 +7,8 @@ nuget FSharp.Core
 nuget coverlet.collector 6.0.4
 nuget FsToolkit.ErrorHandling 5.2.0
 nuget Microsoft.NET.Test.Sdk 17.14.1
+nuget Serilog.AspNetCore
+nuget Serilog.Expressions
 nuget xunit 2.9.3
 nuget xunit.runner.visualstudio 3.1.4
 nuget Microsoft.AspNetCore.Components.WebAssembly.Server 10.0.15
