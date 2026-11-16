@@ -483,3 +483,7 @@ $RECYCLE.BIN/
 
 # Tracked local scripts (overrides the [Bb]in/ rule above)
 !.local/bin/
+
+# Code coverage output
+TestResults/
+coverage-report/

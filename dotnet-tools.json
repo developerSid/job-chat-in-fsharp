@@ -36,6 +36,13 @@
         "paket"
       ],
       "rollForward": false
+    },
+    "dotnet-reportgenerator-globaltool": {
+      "version": "5.6.0",
+      "commands": [
+        "reportgenerator"
+      ],
+      "rollForward": false
     }
   }
 }

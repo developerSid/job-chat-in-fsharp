@@ -15,6 +15,11 @@
     <Compile Include="DateAndOrTime.fs" />
     <Compile Include="Matcher.fs" />
     <Compile Include="Validation.fs" />
+    <Compile Include="Collection\RingBuffer.fs" />
+    <Compile Include="Domain\Error\Error.fs" />
+    <Compile Include="Domain\Error\JobChatError.fs" />
+    <Compile Include="Domain\Error\DomainErrors.fs" />
+    <Compile Include="Domain\JobChat.fs" />
   </ItemGroup>
   <Target Name="Husky" AfterTargets="Restore" Condition="'$(HUSKY)' != 0" Inputs="../../.config/dotnet-tools.json" Outputs="../../.husky/_/install.stamp">
     <Exec Command="dotnet tool restore" StandardOutputImportance="Low" StandardErrorImportance="High" />

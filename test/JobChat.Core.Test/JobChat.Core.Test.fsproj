@@ -14,6 +14,8 @@
     <Compile Include="ValidationTests.fs" />
     <Compile Include="NonZeroPositiveNumberTests.fs" />
     <Compile Include="DiscriminatedUnionsTests.fs" />
+    <Compile Include="Collection\RingBufferTests.fs" />
+    <Compile Include="Domain\JobChatTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\JobChat.Core\JobChat.Core.fsproj" />
